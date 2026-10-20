@@ -14,7 +14,6 @@ function useNavLinks() {
   const home = pathname === "/";
 
   return [
-    { href: "/work", label: "Work", active: pathname.startsWith("/work") },
     {
       href: home ? "#about" : "/#about",
       label: "About",
@@ -23,6 +22,16 @@ function useNavLinks() {
     {
       href: home ? "#experience" : "/#experience",
       label: "Experience",
+      active: false,
+    },
+    {
+      href: home ? "#work" : "/work",
+      label: "Work",
+      active: pathname.startsWith("/work"),
+    },
+    {
+      href: home ? "#reviews" : "/#reviews",
+      label: "Reviews",
       active: false,
     },
     {

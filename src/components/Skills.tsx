@@ -5,7 +5,7 @@ import { skillGroups } from "@/data/content";
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-28 bg-foreground text-white">
+    <section id="skills" className="py-20 md:py-28 bg-white text-foreground">
       <div className="container-page">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -14,7 +14,7 @@ export function Skills() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl"
         >
-          <p className="section-label mb-5 !text-brand">Capabilities</p>
+          <p className="section-label mb-5">Capabilities</p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
             The stack behind the work
           </h2>
@@ -33,14 +33,14 @@ export function Skills() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              <h3 className="text-sm font-semibold tracking-[0.12em] uppercase text-white/45 mb-5">
+              <h3 className="text-sm font-semibold tracking-[0.12em] uppercase text-muted mb-5">
                 {group.title}
               </h3>
               <ul className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <li
                     key={item}
-                    className="rounded-full border border-white/15 px-3.5 py-1.5 text-[0.8rem] text-white/80"
+                    className="rounded-full border border-border bg-muted-bg px-3.5 py-1.5 text-[0.8rem] text-foreground/75"
                   >
                     {item}
                   </li>

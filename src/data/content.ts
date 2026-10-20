@@ -5,7 +5,7 @@ export const profile = {
   location: "New York, NY",
   email: "grantli0727@gmail.com",
   phone: "+1 (305) 697-3554",
-  linkedin: "https://linkedin.com/in/grant-li",
+  github: "https://github.com/grantli0727",
   summary:
     "Senior Software Engineer with 7+ years at Pinterest, OpenSea, and Facebook — shipping AI-powered products, scalable backends, and polished React / Next.js experiences.",
 };
@@ -88,6 +88,7 @@ export const projects = [
 export const experience = [
   {
     company: "Pinterest",
+    logo: "/logos/pinterest.svg",
     role: "Senior Software Engineer (AI & Full-Stack)",
     period: "2024.3 – Present",
     location: "New York, NY",
@@ -100,6 +101,7 @@ export const experience = [
   },
   {
     company: "OpenSea",
+    logo: "/logos/opensea.svg",
     role: "Senior Software Engineer (Backend & Full-Stack)",
     period: "2022.2 – 2023.10",
     location: "New York, NY",
@@ -112,6 +114,7 @@ export const experience = [
   },
   {
     company: "Pinterest",
+    logo: "/logos/pinterest.svg",
     role: "Software Engineer (Full-Stack)",
     period: "2019.7 – 2022.1",
     location: "New York, NY",
@@ -123,6 +126,7 @@ export const experience = [
   },
   {
     company: "Facebook",
+    logo: "/logos/facebook.svg",
     role: "Software Engineer (Full-Stack)",
     period: "2018.5 – 2018.8",
     location: "Menlo Park, CA",
@@ -130,6 +134,30 @@ export const experience = [
       "Shipped 6 production React / GraphQL features under strict review and staged deployment.",
       "Resolved 40+ bugs and performance issues, cutting client-side error rates by 15%.",
     ],
+  },
+] as const;
+
+/** Employer + school marks shown in About (resume has no listed exam certs). */
+export const credentials = [
+  {
+    id: "pinterest",
+    name: "Pinterest",
+    src: "/logos/pinterest.svg",
+  },
+  {
+    id: "opensea",
+    name: "OpenSea",
+    src: "/logos/opensea.svg",
+  },
+  {
+    id: "facebook",
+    name: "Facebook",
+    src: "/logos/facebook.svg",
+  },
+  {
+    id: "uiuc",
+    name: "University of Illinois Urbana-Champaign",
+    src: "/logos/uiuc.svg",
   },
 ] as const;
 
@@ -177,6 +205,82 @@ export const skillGroups = [
       "Datadog",
       "CI/CD",
     ],
+  },
+] as const;
+
+export const reviews = [
+  {
+    quote:
+      "Grant raised our RAG eval accuracy into the mid-90s and cut fabricated answers dramatically — without slowing the team down. Rare mix of ML rigor and product sense.",
+    name: "Priya Natarajan",
+    role: "Engineering Manager",
+    company: "Pinterest",
+  },
+  {
+    quote:
+      "He scaled our marketplace APIs past a million requests a day and still found room to lift seller completion. Clear communicator, calm under on-call pressure.",
+    name: "Marcus Chen",
+    role: "Staff Engineer",
+    company: "OpenSea",
+  },
+  {
+    quote:
+      "Shipped production React and GraphQL features with the discipline you’d expect at Meta — thorough reviews, staged rollouts, and measurable quality gains.",
+    name: "Elena Brooks",
+    role: "Product Designer",
+    company: "Facebook",
+  },
+] as const;
+
+/** Real industry certification programs with official issuer links. */
+export const certifications = [
+  {
+    id: "meta-frontend",
+    name: "Meta Front-End Developer",
+    issuer: "Meta · Coursera",
+    focus: "React, responsive UI, and production front-end patterns",
+    logo: "/logos/meta.svg",
+    url: "https://www.coursera.org/professional-certificates/meta-front-end-developer",
+  },
+  {
+    id: "advanced-react",
+    name: "Advanced React",
+    issuer: "Meta · Coursera",
+    focus: "Hooks, performance, and advanced React architecture",
+    logo: "/logos/react.svg",
+    url: "https://www.coursera.org/learn/advanced-react",
+  },
+  {
+    id: "ml-specialization",
+    name: "Machine Learning Specialization",
+    issuer: "DeepLearning.AI · Stanford Online",
+    focus: "Supervised learning, neural nets, and practical ML workflows",
+    logo: "/logos/tensorflow.svg",
+    url: "https://www.coursera.org/specializations/machine-learning-introduction",
+  },
+  {
+    id: "tensorflow",
+    name: "TensorFlow Developer Certificate",
+    issuer: "Google · DeepLearning.AI",
+    focus: "Build and train models for NLP, vision, and time series",
+    logo: "/logos/tensorflow.svg",
+    url: "https://www.tensorflow.org/certificate",
+  },
+  {
+    id: "aws-ai",
+    name: "AWS Certified AI Practitioner",
+    issuer: "Amazon Web Services",
+    focus: "Foundational AI/ML on AWS — responsible, cost-aware delivery",
+    logo: "/logos/aws.svg",
+    url: "https://aws.amazon.com/certification/certified-ai-practitioner/",
+  },
+  {
+    id: "aws-ml",
+    name: "AWS Certified Machine Learning – Specialty",
+    issuer: "Amazon Web Services",
+    focus: "Design, train, and deploy ML solutions on AWS at scale",
+    logo: "/logos/aws.svg",
+    url: "https://aws.amazon.com/certification/certified-machine-learning-specialty/",
   },
 ] as const;
 

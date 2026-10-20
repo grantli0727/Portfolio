@@ -5,26 +5,26 @@ import { profile } from "@/data/content";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 md:py-28 bg-white">
+    <section id="contact" className="py-20 md:py-28 bg-white text-foreground">
       <div className="container-page">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="relative overflow-hidden rounded-[1.5rem] md:rounded-[2.25rem] bg-foreground text-white px-7 py-14 md:px-14 md:py-20 lg:px-16"
+          className="relative overflow-hidden rounded-[1.5rem] md:rounded-[2.25rem] bg-muted-bg px-7 py-14 md:px-14 md:py-20 lg:px-16"
         >
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_85%_0%,rgba(233,29,37,0.22),transparent_55%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_85%_0%,rgba(233,29,37,0.1),transparent_55%)]"
             aria-hidden
           />
 
           <div className="relative z-10 max-w-2xl">
-            <p className="section-label mb-5 !text-brand">Contact</p>
+            <p className="section-label mb-5">Contact</p>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
               Let&apos;s build something worth shipping
             </h2>
-            <p className="mt-5 text-white/65 text-base md:text-lg leading-relaxed max-w-xl">
+            <p className="mt-5 text-foreground/65 text-base md:text-lg leading-relaxed max-w-xl">
               Open to senior engineering roles and selective product builds —
               AI features, backends, and polished Next.js front ends.
             </p>
@@ -34,18 +34,18 @@ export function Contact() {
                 Email me
               </a>
               <a
-                href={profile.linkedin}
+                href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-ghost"
+                className="btn-outline"
               >
-                LinkedIn
+                GitHub
               </a>
             </div>
 
-            <dl className="mt-12 grid sm:grid-cols-3 gap-6 text-sm border-t border-white/10 pt-8">
+            <dl className="mt-12 grid sm:grid-cols-3 gap-6 text-sm border-t border-foreground/10 pt-8">
               <div>
-                <dt className="text-white/40 mb-1.5 text-xs uppercase tracking-wider">
+                <dt className="text-muted mb-1.5 text-xs uppercase tracking-wider">
                   Email
                 </dt>
                 <dd>
@@ -58,7 +58,7 @@ export function Contact() {
                 </dd>
               </div>
               <div>
-                <dt className="text-white/40 mb-1.5 text-xs uppercase tracking-wider">
+                <dt className="text-muted mb-1.5 text-xs uppercase tracking-wider">
                   Phone
                 </dt>
                 <dd>
@@ -71,7 +71,7 @@ export function Contact() {
                 </dd>
               </div>
               <div>
-                <dt className="text-white/40 mb-1.5 text-xs uppercase tracking-wider">
+                <dt className="text-muted mb-1.5 text-xs uppercase tracking-wider">
                   Location
                 </dt>
                 <dd>{profile.location}</dd>
