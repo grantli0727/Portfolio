@@ -3,11 +3,11 @@ import { profile } from "@/data/content";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-white py-10 md:py-12">
-      <div className="container-page flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 text-sm text-muted">
+    <footer className="border-t border-white/10 bg-foreground py-10 md:py-12 text-white">
+      <div className="container-page flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 text-sm text-white/55">
         <p>
           © 2026 {profile.name}
-          <span className="mx-2 text-border">·</span>
+          <span className="mx-2 text-white/25">·</span>
           Built with Next.js
         </p>
         <div className="flex flex-wrap gap-5">
@@ -18,12 +18,12 @@ export function Footer() {
             Email
           </a>
           <a
-            href={profile.linkedin}
+            href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-brand transition-colors"
           >
-            LinkedIn
+            GitHub
           </a>
           <Link href="/work" className="hover:text-brand transition-colors">
             Work
