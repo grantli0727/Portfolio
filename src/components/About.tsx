@@ -158,6 +158,17 @@ export function About() {
                   >
                     GitHub
                   </a>
+                  <span aria-hidden className="text-foreground/20">
+                    ·
+                  </span>
+                  <a
+                    href={profile.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-brand transition-colors"
+                  >
+                    LinkedIn
+                  </a>
                 </div>
 
                 <a href="#contact" className="btn-outline !py-2.5 !px-5 !text-sm self-start sm:self-auto">
