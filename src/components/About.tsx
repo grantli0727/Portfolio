@@ -43,7 +43,25 @@ export function About() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-5 lg:sticky lg:top-28"
             >
-              <p className="section-label mb-5">About</p>
+              <div className="mb-8 flex items-center gap-4">
+                <div className="relative size-20 md:size-24 shrink-0 overflow-hidden rounded-full ring-[3px] ring-brand/25 shadow-[0_12px_40px_rgba(233,29,37,0.18)]">
+                  <Image
+                    src={profile.avatar}
+                    alt={profile.name}
+                    fill
+                    className="object-cover object-top"
+                    sizes="96px"
+                    priority
+                  />
+                </div>
+                <div>
+                  <p className="section-label mb-1.5 !gap-2">About</p>
+                  <p className="text-sm font-semibold tracking-tight text-foreground/70">
+                    {profile.name}
+                  </p>
+                  <p className="text-xs text-muted mt-0.5">{profile.title}</p>
+                </div>
+              </div>
               <h2 className="text-3xl md:text-[2.75rem] lg:text-5xl font-bold tracking-tight leading-[1.08]">
                 Engineer who ships AI that people trust
               </h2>
