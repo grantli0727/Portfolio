@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Header } from "@/components/Header";
+import { profile } from "@/data/content";
 
 const stats = [
   { value: "7+", label: "Years shipping" },
@@ -267,14 +268,26 @@ export function Hero() {
         <div className="relative z-10 flex flex-1 flex-col justify-center px-6 md:px-10 lg:px-14 pt-24 pb-10">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             <div className="lg:col-span-5">
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                className="text-xs md:text-sm font-semibold tracking-[0.22em] uppercase text-white/55 mb-5"
+                className="mb-6 flex items-center gap-4"
               >
-                Senior Software Engineer · New York
-              </motion.p>
+                <div className="relative size-14 md:size-16 shrink-0 overflow-hidden rounded-full ring-2 ring-brand/80 shadow-[0_8px_28px_rgba(233,29,37,0.35)]">
+                  <Image
+                    src={profile.avatar}
+                    alt=""
+                    fill
+                    className="object-cover object-top"
+                    sizes="64px"
+                    priority
+                  />
+                </div>
+                <p className="text-xs md:text-sm font-semibold tracking-[0.22em] uppercase text-white/55">
+                  Senior Software Engineer · New York
+                </p>
+              </motion.div>
 
               <motion.h1
                 initial={{ opacity: 0, y: 28 }}

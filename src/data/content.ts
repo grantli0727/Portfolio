@@ -7,6 +7,7 @@ export const profile = {
   phone: "+1 (305) 697-3554",
   github: "https://github.com/grantli0727",
   linkedin: "https://www.linkedin.com/in/grant-li/",
+  avatar: "/avatar/grant-li.jpg",
   summary:
     "Senior Software Engineer with 7+ years at Pinterest, OpenSea, and Facebook — shipping AI-powered products, scalable backends, and polished React / Next.js experiences.",
 };
