@@ -25,6 +25,14 @@ export function Footer() {
           >
             GitHub
           </a>
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-brand transition-colors"
+          >
+            LinkedIn
+          </a>
           <Link href="/work" className="hover:text-brand transition-colors">
             Work
           </Link>
