@@ -44,13 +44,13 @@ export function About() {
               className="lg:col-span-5 lg:sticky lg:top-28"
             >
               <div className="mb-8 flex items-center gap-4">
-                <div className="relative size-20 md:size-24 shrink-0 overflow-hidden rounded-full ring-[3px] ring-brand/25 shadow-[0_12px_40px_rgba(233,29,37,0.18)]">
+                <div className="relative size-28 md:size-32 shrink-0 overflow-hidden rounded-full ring-[3px] ring-brand/25 shadow-[0_12px_40px_rgba(233,29,37,0.18)]">
                   <Image
                     src={profile.avatar}
                     alt={profile.name}
                     fill
                     className="object-cover object-top"
-                    sizes="96px"
+                    sizes="128px"
                     priority
                   />
                 </div>

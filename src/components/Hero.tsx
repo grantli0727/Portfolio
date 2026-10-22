@@ -274,13 +274,13 @@ export function Hero() {
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                 className="mb-6 flex items-center gap-4"
               >
-                <div className="relative size-14 md:size-16 shrink-0 overflow-hidden rounded-full ring-2 ring-brand/80 shadow-[0_8px_28px_rgba(233,29,37,0.35)]">
+                <div className="relative size-20 md:size-24 shrink-0 overflow-hidden rounded-full ring-2 ring-brand/80 shadow-[0_8px_28px_rgba(233,29,37,0.35)]">
                   <Image
                     src={profile.avatar}
                     alt=""
                     fill
                     className="object-cover object-top"
-                    sizes="64px"
+                    sizes="96px"
                     priority
                   />
                 </div>
