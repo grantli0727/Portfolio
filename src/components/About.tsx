@@ -6,20 +6,20 @@ import { credentials, profile } from "@/data/content";
 
 const focuses = [
   {
-    title: "AI & LLM",
-    body: "RAG, agents, evals, and guardrails that stay grounded in real answers.",
+    title: "PHP & Laravel",
+    body: "PHP 8+ with Laravel and Symfony — REST APIs, OOP/MVC, MySQL and PostgreSQL.",
   },
   {
-    title: "Backend",
-    body: "Python / FastAPI, Node.js, and TypeScript systems built for AWS at scale.",
+    title: "Catalogues",
+    body: "Feed ingestion into a normalised catalogue: price, photo, sizes, availability, and a tracked URL.",
   },
   {
-    title: "Frontend",
-    body: "Fast, accessible Next.js — SSR, streaming, and measurable UX.",
+    title: "Honest matching",
+    body: "An exact product stays exact. Anything else is shown as a similar item.",
   },
   {
-    title: "Collaboration",
-    body: "Clear partnership with product, design, and non-technical stakeholders.",
+    title: "Click reports",
+    body: "Click ids, admin reports, and reconciliation against network conversions and commissions.",
   },
 ];
 
@@ -43,27 +43,15 @@ export function About() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-5 lg:sticky lg:top-28"
             >
-              <div className="mb-8 flex items-center gap-4">
-                <div className="relative size-28 md:size-32 shrink-0 overflow-hidden rounded-full ring-[3px] ring-brand/25 shadow-[0_12px_40px_rgba(233,29,37,0.18)]">
-                  <Image
-                    src={profile.avatar}
-                    alt={profile.name}
-                    fill
-                    className="object-cover object-top"
-                    sizes="128px"
-                    priority
-                  />
-                </div>
-                <div>
-                  <p className="section-label mb-1.5 !gap-2">About</p>
-                  <p className="text-sm font-semibold tracking-tight text-foreground/70">
-                    {profile.name}
-                  </p>
-                  <p className="text-xs text-muted mt-0.5">{profile.title}</p>
-                </div>
+              <div className="mb-8">
+                <p className="section-label mb-1.5 !gap-2">About</p>
+                <p className="text-sm font-semibold tracking-tight text-foreground/70">
+                  {profile.name}
+                </p>
+                <p className="text-xs text-muted mt-0.5">{profile.title}</p>
               </div>
               <h2 className="text-3xl md:text-[2.75rem] lg:text-5xl font-bold tracking-tight leading-[1.08]">
-                Engineer who ships AI that people trust
+                Backend developer who extends live systems carefully
               </h2>
 
               <ul
@@ -164,17 +152,6 @@ export function About() {
                     className="hover:text-brand transition-colors"
                   >
                     {profile.email}
-                  </a>
-                  <span aria-hidden className="text-foreground/20">
-                    ·
-                  </span>
-                  <a
-                    href={profile.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-brand transition-colors"
-                  >
-                    GitHub
                   </a>
                   <span aria-hidden className="text-foreground/20">
                     ·

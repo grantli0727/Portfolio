@@ -20,7 +20,7 @@ export function Experience() {
         >
           <p className="section-label mb-5 !text-brand">Experience</p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
-            From Facebook to Pinterest — shipping at scale
+            From Facebook to Pinterest — backends that stay in production
           </h2>
         </motion.div>
 

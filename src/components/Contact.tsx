@@ -39,21 +39,13 @@ export function Contact() {
                 Let&apos;s build something worth shipping
               </h2>
               <p className="mt-5 text-foreground/65 text-base md:text-lg leading-relaxed max-w-lg">
-                Open to senior engineering roles and selective product builds —
-                AI features, backends, and polished Next.js front ends.
+                Open to senior backend roles and project-based takeovers — PHP
+                APIs, shoppable catalogues, and affiliate reporting.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-3">
                 <a href={`mailto:${profile.email}`} className="btn-primary">
                   Email me
-                </a>
-                <a
-                  href={profile.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-outline"
-                >
-                  GitHub
                 </a>
                 <a
                   href={profile.linkedin}

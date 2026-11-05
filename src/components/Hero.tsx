@@ -13,30 +13,31 @@ const stats = [
 ] as const;
 
 const CODE_LINES = [
-  { html: `<span class="kw">from</span> pgvector <span class="kw">import</span> Index` },
-  { html: `<span class="kw">from</span> app.llm <span class="kw">import</span> ground, answer, cite` },
-  { html: `<span class="kw">from</span> app.eval <span class="kw">import</span> load_set, score` },
+  { html: `<span class="kw">&lt;?php</span>` },
   { html: `` },
-  { html: `<span class="kw">def</span> <span class="fn">evaluate</span>(questions, k=<span class="num">8</span>):` },
-  { html: `    hits = <span class="num">0</span>` },
-  { html: `    <span class="kw">for</span> q <span class="kw">in</span> questions:` },
-  { html: `        ctx = Index.search(q, k=k)` },
-  { html: `        out = answer(q, ground(ctx))` },
-  { html: `        hits += <span class="num">1</span> <span class="kw">if</span> cite(out) <span class="kw">else</span> <span class="num">0</span>` },
-  { html: `    <span class="kw">return</span> hits / len(questions)` },
+  { html: `<span class="kw">namespace</span> App\\Catalogue;` },
   { html: `` },
-  { html: `<span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:` },
-  { html: `    qs = load_set(<span class="str">"eval/300q.json"</span>)` },
-  { html: `    acc = evaluate(qs)` },
-  { html: `    print(f<span class="str">"accuracy={acc:.2f}"</span>)` },
-  { html: `    <span class="cmt"># baseline 0.72 → grounded 0.94</span>` },
+  { html: `<span class="kw">class</span> <span class="fn">FeedIngest</span>` },
+  { html: `{` },
+  { html: `    <span class="kw">public function</span> <span class="fn">normalise</span>(<span class="kw">array</span> $row): Product` },
+  { html: `    {` },
+  { html: `        $exact = $this->match($row[<span class="str">'sku'</span>]);` },
+  { html: `` },
+  { html: `        <span class="kw">return new</span> Product(` },
+  { html: `            id: $row[<span class="str">'id'</span>],` },
+  { html: `            price: $row[<span class="str">'price'</span>],` },
+  { html: `            url: $this->track($row[<span class="str">'url'</span>]),` },
+  { html: `            similar: $exact === <span class="kw">null</span>,` },
+  { html: `        );` },
+  { html: `    }` },
+  { html: `}` },
 ] as const;
 
 const TERMINAL_LINES = [
-  { text: "$ python rag_eval.py", tone: "cmd" as const },
-  { text: "loading eval set… 300 questions", tone: "dim" as const },
-  { text: "retrieving + grounding…", tone: "dim" as const },
-  { text: "accuracy=0.94  ✓  (+22pts vs baseline)", tone: "ok" as const },
+  { text: "$ php artisan feeds:ingest impact", tone: "cmd" as const },
+  { text: "retailers… 16  ·  normalising catalogue", tone: "dim" as const },
+  { text: "exact SKUs stay exact · near matches labeled similar", tone: "dim" as const },
+  { text: "synced=1842 in stock", tone: "ok" as const },
 ];
 
 function highlightPlain(line: string) {
@@ -61,7 +62,7 @@ function CodeWindow() {
   const [typedChars, setTypedChars] = useState(0);
   const [phase, setPhase] = useState<"typing" | "running" | "done">("typing");
   const [termIndex, setTermIndex] = useState(0);
-  const [accuracy, setAccuracy] = useState(0.72);
+  const [synced, setSynced] = useState(1200);
 
   const fullText = CODE_LINES.map((l) =>
     l.html.replace(/<[^>]+>/g, "")
@@ -74,14 +75,14 @@ function CodeWindow() {
       setTypedChars(fullText.length);
       setPhase("done");
       setTermIndex(TERMINAL_LINES.length);
-      setAccuracy(0.94);
+      setSynced(1842);
       return;
     }
 
     setTypedChars(0);
     setPhase("typing");
     setTermIndex(0);
-    setAccuracy(0.72);
+    setSynced(1200);
 
     let i = 0;
     const typeId = window.setInterval(() => {
@@ -116,14 +117,14 @@ function CodeWindow() {
     if (phase !== "done" || reduceMotion) return;
 
     const start = performance.now();
-    const from = 0.72;
-    const to = 0.94;
+    const from = 1200;
+    const to = 1842;
     let raf = 0;
 
     const tick = (now: number) => {
       const t = Math.min(1, (now - start) / 900);
       const eased = 1 - Math.pow(1 - t, 3);
-      setAccuracy(from + (to - from) * eased);
+      setSynced(from + (to - from) * eased);
       if (t < 1) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
@@ -164,7 +165,7 @@ function CodeWindow() {
         <span className="size-2.5 rounded-full bg-[#febc2e]" aria-hidden />
         <span className="size-2.5 rounded-full bg-[#28c840]" aria-hidden />
         <span className="flex-1 text-center text-[0.7rem] font-medium tracking-wide text-white/40">
-          rag_eval.py
+          FeedIngest.php
         </span>
         <span
           className={`text-[0.65rem] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${
@@ -216,7 +217,7 @@ function CodeWindow() {
                 }
               >
                 {line.tone === "ok"
-                  ? `accuracy=${accuracy.toFixed(2)}  ✓  (+22pts vs baseline)`
+                  ? `synced=${Math.round(synced)} in stock  ✓`
                   : line.text}
               </motion.p>
             ))}
@@ -272,20 +273,10 @@ export function Hero() {
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                className="mb-6 flex items-center gap-4"
+                className="mb-6"
               >
-                <div className="relative size-20 md:size-24 shrink-0 overflow-hidden rounded-full ring-2 ring-brand/80 shadow-[0_8px_28px_rgba(233,29,37,0.35)]">
-                  <Image
-                    src={profile.avatar}
-                    alt=""
-                    fill
-                    className="object-cover object-top"
-                    sizes="96px"
-                    priority
-                  />
-                </div>
                 <p className="text-xs md:text-sm font-semibold tracking-[0.22em] uppercase text-white/55">
-                  Senior Software Engineer · New York
+                  Senior Backend Developer · {profile.location}
                 </p>
               </motion.div>
 
@@ -312,8 +303,9 @@ export function Hero() {
                 }}
                 className="mt-6 max-w-md text-base md:text-lg text-white/85 leading-relaxed"
               >
-                AI products, reliable backends, and Next.js interfaces — from
-                Pinterest, OpenSea, and Facebook to live launches.
+                PHP, TypeScript, and Node.js backends for live products —
+                catalogues, tracked affiliate links, and APIs a mobile app can
+                trust.
               </motion.p>
 
               <motion.div

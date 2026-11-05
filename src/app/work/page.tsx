@@ -8,7 +8,7 @@ import { projects } from "@/data/content";
 export const metadata: Metadata = {
   title: "Work — Grant Li",
   description:
-    "Selected live products and sites by Grant Li — AI products, marketing experiences, and full-stack builds.",
+    "Selected live products by Grant Li — shoppable catalogues, affiliate storefronts, and live apps.",
 };
 
 export default function WorkPage() {
@@ -23,8 +23,9 @@ export default function WorkPage() {
               Live products I&apos;ve shipped
             </h1>
             <p className="mt-5 text-white/60 text-base md:text-lg leading-relaxed max-w-xl">
-              {projects.length} live destinations — preview each site, then open
-              it in a new tab.
+              {projects.length} live destinations — shoppable catalogues,
+              affiliate storefronts, and product sites. Preview each one, then
+              open it in a new tab.
             </p>
             <Link
               href="/#work"

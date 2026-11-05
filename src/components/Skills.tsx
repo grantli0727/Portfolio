@@ -16,7 +16,7 @@ export function Skills() {
         >
           <p className="section-label mb-5">Capabilities</p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
-            The stack behind the work
+            PHP, data, and the systems around them
           </h2>
         </motion.div>
 

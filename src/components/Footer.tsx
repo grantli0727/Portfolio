@@ -18,14 +18,6 @@ export function Footer() {
             Email
           </a>
           <a
-            href={profile.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-brand transition-colors"
-          >
-            GitHub
-          </a>
-          <a
             href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"

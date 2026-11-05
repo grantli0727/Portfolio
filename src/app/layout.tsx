@@ -10,13 +10,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Grant Li — Senior Software Engineer | AI, Backend & Next.js",
+  title: "Grant Li — Senior Backend Developer | PHP, TypeScript, Node.js",
   description:
-    "Personal portfolio of Grant Li — Senior Software Engineer with 7+ years at Pinterest, OpenSea, and Facebook. AI/LLM applications, backend systems, and React / Next.js.",
+    "Personal portfolio of Grant Li — Senior Backend Developer with 7+ years at Pinterest, OpenSea, and Facebook. PHP 8, Laravel, TypeScript, Node.js, retailer catalogues, and affiliate links.",
   openGraph: {
-    title: "Grant Li — Senior Software Engineer",
+    title: "Grant Li — Senior Backend Developer",
     description:
-      "AI / LLM applications, scalable backends, and polished React / Next.js products.",
+      "PHP, TypeScript, and Node.js backends — catalogues, tracked affiliate links, and REST APIs.",
     type: "website",
   },
 };

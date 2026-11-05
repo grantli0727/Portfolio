@@ -20,7 +20,7 @@ export function Certifications() {
         >
           <p className="section-label mb-5 !text-brand">Certifications</p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.08]">
-            React, ML, and cloud credentials that back the craft
+            Back-end and cloud credentials that back the craft
           </h2>
         </motion.div>
 
