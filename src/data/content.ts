@@ -14,6 +14,24 @@ export const profile = {
 
 export const projects = [
   {
+    id: "soundverse",
+    name: "Soundverse",
+    url: "https://www.soundverse.ai/",
+    image: "/projects/soundverse.jpg",
+    tag: "AI Product",
+    description:
+      "AI studio where music, video, lyrics, and voice are generated from a prompt — directed by Agent One, a reasoning AI producer.",
+  },
+  {
+    id: "myxt",
+    name: "Myxt",
+    url: "https://myxt.com/",
+    image: "/projects/myxt.jpg",
+    tag: "Marketplace",
+    description:
+      "Music store for fans to buy from independent artists and back them with exclusive releases.",
+  },
+  {
     id: "askjenna",
     name: "Ask Jenna",
     url: "https://askjenna.ai",

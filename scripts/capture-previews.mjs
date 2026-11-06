@@ -7,6 +7,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.join(__dirname, "..", "public", "projects");
 
 const sites = [
+  { id: "soundverse", url: "https://www.soundverse.ai/" },
+  { id: "myxt", url: "https://myxt.com/" },
   { id: "askjenna", url: "https://askjenna.ai" },
   { id: "mywinetravels", url: "https://mywinetravels.ai" },
   { id: "clickfree", url: "https://getclickfreenow.com" },
