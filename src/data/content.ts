@@ -32,6 +32,24 @@ export const projects = [
       "Music store for fans to buy from independent artists and back them with exclusive releases.",
   },
   {
+    id: "layer",
+    name: "Layer",
+    url: "https://layer.ai/",
+    image: "/projects/layer.jpg",
+    tag: "AI Product",
+    description:
+      "Creative harness for teams — playables, video, and images generated from a brief, with workflows that chain models into a pipeline you can rerun.",
+  },
+  {
+    id: "decohere",
+    name: "Decohere",
+    url: "https://www.decohere.ai/",
+    image: "/projects/decohere.jpg",
+    tag: "AI Product",
+    description:
+      "Fast AI image and video generator — characters, real-time image streams, upscaling, and style stations that produce unlimited variations.",
+  },
+  {
     id: "askjenna",
     name: "Ask Jenna",
     url: "https://askjenna.ai",
